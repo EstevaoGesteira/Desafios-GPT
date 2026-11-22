@@ -3,21 +3,23 @@ def frete():
     expresso = input("Deseja entrega expressa? (s/n)")
     if expresso == "s":
         expresso = True
-    if distancia <= 5:
+    if distancia < 0:
+        print("Distância inválida!")
+    if distancia > 0 and distancia <= 5:
         if expresso == True:
-            print(f"Para a distâmcia de: {distancia} km, O Frete expresso é gratís!")
+            print(f"Para a distância de: {distancia} km, O frete expresso é gratís!")
         else:
-            print(f"Para a distâmcia de: {distancia} km, O Frete é grátis!")
+            print(f"Para a distância de: {distancia} km, O frete é grátis!")
     elif distancia > 5 and distancia <= 15:
         if expresso == True:
-            print(f"Para a distâmcia de: {distancia} km, O frete expresso custára R${(8 * 1.5)}")
+            print(f"Para a distância de: {distancia} km, O frete expresso custará R${(8 * 1.5)}")
         else:
-            print(f"Para a distâmcia de: {distancia} km, O frete custára R$8.00!")
-    else:
+            print(f"Para a distância de: {distancia} km, O frete custará R$8.00!")
+    elif distancia > 15:
         if expresso == True:
-            print(f"Para a distâmcia de: {distancia} km, O frete expresso custará R${(15 * 1.5)}")
+            print(f"Para a distância de: {distancia} km, O frete expresso custará R${(15 * 1.5)}")
         else:
-            print(f"Para a distâmcia de: {distancia} km, O frete custará R$15.00")
+            print(f"Para a distância de: {distancia} km, O frete custará R$15.00")
 
 frete()
 
